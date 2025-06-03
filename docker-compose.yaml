@@ -12,3 +12,9 @@ services:
             - ./data/piston/packages:/piston/packages
         tmpfs:
             - /tmp:exec
+        environment:
+            - PISTON_OUTPUT_MAX_SIZE=20000000 # 20 MB
+            - PISTON_RUN_TIMEOUT=-1        # unlimited run timeout
+            - PISTON_COMPILE_TIMEOUT=-1     # unlimited compile timeout
+            - PISTON_RUN_CPU_TIMEOUT=-1    # unlimited CPU run timeout
+            - PISTON_RUN_COMPILE_TIMEOUT=-1  # unlimited compile run timeout
